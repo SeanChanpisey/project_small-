@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+td img {
+    border-radius: 5px;
+}
+
+/* Quantity Input */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Buttons */
+button, a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 5px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+a {
+    background-color: #dc3545;
+    color: white;
+}
+
+a:hover {
+    background-color: #c82333;
+}
+
+/* Checkout Button */
+a[href="checkout.php"] {
+    background-color: #ffc107;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+a[href="checkout.php"]:hover {
+    background-color: #e0a800;
+}
+
+/* Empty Cart Message */
+p {
+    color: #777;
+    font-size: 18px;
+}
