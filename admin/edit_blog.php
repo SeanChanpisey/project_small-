@@ -1,5 +1,5 @@
 <?php 
- require_once './sql/config.php';
+ require './sql/config.php';
  
  
 

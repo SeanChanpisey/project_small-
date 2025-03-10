@@ -1,13 +1,21 @@
+<?php
+// include './includes/db.php';
+require '../includes/db.php';
+// Fetch the current logo path
+$stmt = $pdo->query("SELECT logo_path FROM logo_settings WHERE id = 1");
+$logo = $stmt->fetch(PDO::FETCH_ASSOC);
+$logo_path = $logo ? $logo['logo_path'] : '';
+?>
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="sidebar" data-background-color="dark">
   <div class="sidebar-logo">
     <!-- Logo Header -->
-    <div class="logo-header" data-background-color="dark">
+    <div class="logo-header" data-background-color="">
       <a href="index.php" class="logo">
         <img
-          src="http://localhost/ecommerce/img/logo.png" style="background : white; "
+          src="<?= htmlspecialchars($logo_path) ?>" alt="Website Logo" style="max-width: 200px;"
           alt="navbar brand"
           class="navbar-brand"
           height="20" />
@@ -56,8 +64,16 @@
         </li>
 
         <li class="nav-item">
+          <a data-bs-toggle="collapse" href="edit_logo.php">
+            <i class="fa-brands fa-slideshare"></i>
+            <p>Edit logo</p>
+
+          </a>
+
+        </li>
+        <li class="nav-item">
           <a data-bs-toggle="collapse" href="edit_banner.php">
-          <i class="fa-brands fa-slideshare"></i>
+            <i class="fa-brands fa-slideshare"></i>
             <p>Banner</p>
 
           </a>
@@ -65,7 +81,7 @@
         </li>
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#">
-          <i class="fa-solid fa-book"></i>
+            <i class="fa-solid fa-book"></i>
             <p>Edit blog</p>
 
           </a>
@@ -83,7 +99,7 @@
         </li>
         <li class="nav-item">
           <a href="add_product.php">
-          <i class="fa-solid fa-cart-plus"></i>
+            <i class="fa-solid fa-cart-plus"></i>
             <p>Add Product</p>
           </a>
         </li>

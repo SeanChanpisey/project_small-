@@ -1,8 +1,22 @@
+<?php
+require 'includes/db.php';
+
+// Fetch the current logo path
+$stmt = $pdo->query("SELECT logo_path FROM logo_settings WHERE id = 1");
+$logo = $stmt->fetch(PDO::FETCH_ASSOC);
+$logo_path = $logo ? $logo['logo_path'] : '';
+?>
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-3">
             <div class="header__logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+                <div>
+                    <?php if ($logo_path): ?>
+                        <img src="<?= htmlspecialchars($logo_path) ?>" alt="Website Logo" style="max-width: 200px;">
+                    <?php else: ?>
+                        <p>No logo available.</p>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
@@ -42,22 +56,21 @@
 </div>
 <script>
     function addToCart(id, name, price, image) {
-    let formData = new FormData();
-    formData.append("product_id", id);
-    formData.append("product_name", name);
-    formData.append("product_price", price);
-    formData.append("product_image", image);
+        let formData = new FormData();
+        formData.append("product_id", id);
+        formData.append("product_name", name);
+        formData.append("product_price", price);
+        formData.append("product_image", image);
 
-    fetch("cart_handler.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("cart-count").innerText = data;
-        alert("Product added to cart!");
-    })
-    .catch(error => console.error("Error:", error));
-}
-
+        fetch("cart_handler.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("cart-count").innerText = data;
+                alert("Product added to cart!");
+            })
+            .catch(error => console.error("Error:", error));
+    }
 </script>

@@ -1,6 +1,6 @@
 <?php
 // Database connection using PDO
- include './sql/config.php';
+require './sql/config.php';
 
 // Handle file upload and update banner
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
