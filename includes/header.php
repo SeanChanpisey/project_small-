@@ -11,12 +11,13 @@ $logo_path = $logo ? $logo['logo_path'] : '';
         <div class="col-lg-3 col-md-3">
             <div class="header__logo">
                 <div>
-                    <?php if ($logo_path): ?>
-                        <img src="<?= htmlspecialchars($logo_path) ?>" alt="Website Logo" style="max-width: 200px;">
+                    <?php if (!empty($logo_path)): ?>
+                        <img src="<?php echo 'admin/' . htmlspecialchars($logo_path); ?>" alt="Website Logo" style="max-width: 200px;">
                     <?php else: ?>
                         <p>No logo available.</p>
                     <?php endif; ?>
                 </div>
+
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
