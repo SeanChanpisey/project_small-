@@ -65,8 +65,8 @@ $logo_path = $logo ? $logo['logo_path'] : '';
 
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="edit_logo.php">
-            <i class="fa-brands fa-slideshare"></i>
-            <p>Edit logo</p>
+            <i class="fa-solid fa-image"></i>
+            <p>Logo</p>
 
           </a>
 
@@ -80,9 +80,9 @@ $logo_path = $logo ? $logo['logo_path'] : '';
 
         </li>
         <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#">
+          <a data-bs-toggle="collapse" href="edit_blog.php">
             <i class="fa-solid fa-book"></i>
-            <p>Edit blog</p>
+            <p>Blog</p>
 
           </a>
 
