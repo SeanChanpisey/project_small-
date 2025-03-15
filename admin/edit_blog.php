@@ -87,14 +87,6 @@ if (isset($_POST['submit'])) {  // Check if button is clicked
             padding: 12px;
         }
 
-        /* .image-preview {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-            display: none;
-            border-radius: 5px;
-        } */
-
         button {
             padding-top: 10px;
             margin-top: 20px;
@@ -110,7 +102,6 @@ if (isset($_POST['submit'])) {  // Check if button is clicked
             background: #0056b3;
         }
 
-        /* Table Styling - Restored */
         table {
             width: 70%;
             margin: 40px auto;
@@ -160,14 +151,15 @@ if (isset($_POST['submit'])) {  // Check if button is clicked
 
         .edit:hover {
             background: #218838;
+            color: #f1f1f1;
         }
 
         .delete:hover {
             background: #c82333;
+            color: #f1f1f1;
         }
     </style>
 
-    <!-- TinyMCE Script -->
     
 </head>
 

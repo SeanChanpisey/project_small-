@@ -41,7 +41,7 @@ $logo_path = $logo ? $logo['logo_path'] : '';
         <li class="nav-item active">
           <a
             data-bs-toggle="collapse"
-            href="#dashboard"
+            href="./index.php"
             class="collapsed"
             aria-expanded="false">
             <i class="fas fa-home"></i>
@@ -83,6 +83,14 @@ $logo_path = $logo ? $logo['logo_path'] : '';
           <a data-bs-toggle="collapse" href="edit_blog.php">
             <i class="fa-solid fa-book"></i>
             <p>Blog</p>
+
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="edit_contact.php">
+          <i class="fa-solid fa-address-book"></i>
+            <p>Contact</p>
 
           </a>
 

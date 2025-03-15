@@ -39,20 +39,28 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> -->
 
 <script src="./js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '.textarea-tiny',
-            height: 300,
-            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste help wordcount',
-            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-        });
+<script>
+  tinymce.init({
+    selector: '.textarea-tiny',
+    height: 300,
+    plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste help wordcount',
+    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
+  });
 
-        function previewImage(event) {
-            const image = document.getElementById("imagePreview");
-            image.src = URL.createObjectURL(event.target.files[0]);
-            image.style.display = "block";
-        }
-    </script>
+  function previewImage(event) {
+    const image = document.getElementById("imagePreview");
+    image.src = URL.createObjectURL(event.target.files[0]);
+    image.style.display = "block";
+  }
+</script>
+
+<!-- handle <p> tag  -->
+<script>
+  document.getElementById('blogForm').addEventListener('submit', function(event) {
+    var description = document.getElementById('description');
+    description.value = description.value.replace(/<p>|<\/p>/g, '');
+  });
+</script>
 
 <script>
   $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
